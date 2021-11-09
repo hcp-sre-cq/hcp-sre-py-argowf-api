@@ -7,6 +7,7 @@ python FastAPI init
 ```sh
 $ pip install fastapi
 $ pip install uvicorn[standard]
+$ pip install -r requirements.txt
 
 $ uvicorn app.main:app --reload
 ```
