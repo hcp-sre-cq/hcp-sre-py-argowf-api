@@ -1,0 +1,40 @@
+version: 1
+formatters:
+  simple:
+    format: '[%(name)s] %(message)s'
+  complex:
+    format: '%(asctime)s %(levelname)s [%(name)s] [%(filename)s:%(lineno)d] - %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: complex
+    stream: ext://sys.stdout
+  info:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: complex
+    stream: ext://sys.stdout
+  error:
+    class: logging.StreamHandler
+    level: ERROR
+    formatter: complex
+    stream: ext://sys.stdout
+  warning:
+    class: logging.StreamHandler
+    level: WARNING
+    formatter: complex
+    stream: ext://sys.stdout
+  critical:
+    class: logging.StreamHandler
+    level: CRITICAL
+    formatter: complex
+    stream: ext://sys.stdout
+loggers:
+  simpleLogger:
+    level: DEBUG
+    handlers: [console, info, error, warning, critical]
+    propagate: no
+root:
+  level: INFO
+  handlers: [console, info, error, warning, critical]
